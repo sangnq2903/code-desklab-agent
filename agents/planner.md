@@ -27,7 +27,13 @@ Yêu cầu hoặc bug người dùng đưa ra, kèm mô tả BA / link Figma / f
    - HTML do AI gen: DỪNG, yêu cầu convert sang Figma và chờ người dùng duyệt. Không lập kế hoạch code từ HTML.
    - Không rõ nguồn: hỏi.
 4. Đối chiếu mô tả BA với Figma. Có mâu thuẫn hoặc thiếu (trạng thái lỗi / rỗng / loading, validation, chữ, luồng): DỪNG, liệt kê từng điểm lệch, hỏi từng câu một.
-5. Với BUGFIX: xác định cách tái hiện, đọc code tìm nguyên nhân gốc có bằng chứng (không đoán). Nêu giả thuyết, cách kiểm chứng, phạm vi ảnh hưởng.
+5. Với BUGFIX: xác định cách tái hiện, rồi **quét dần theo vòng** để tìm nguyên nhân gốc có bằng chứng (không đoán), chỉ mở rộng khi vòng trước chưa đủ:
+   - Vòng 0: screen báo lỗi. Đối chiếu dòng của nó trong docs/screen-map.md với code thật (file, component con, state, API). Đọc code tìm nguyên nhân.
+   - Vòng 1: các screen kề (cột "Mở từ" / "Đi tới") và các component, hook, store, API dùng chung với screen lỗi.
+   - Vòng 2 trở đi: mở rộng theo luồng điều hướng và các nơi khác dùng chung đoạn code nghi ngờ (grep).
+   - Dừng ngay khi có nguyên nhân gốc kèm bằng chứng. Ghi lại các screen đã quét ở mỗi vòng. Không quét lại toàn bộ dự án.
+   - Trong lúc quét, hễ thấy dòng sơ đồ sai hoặc lỗi thời thì ghi vào mục "Mục sơ đồ cần cập nhật" (bạn chỉ đọc nên không tự sửa).
+   Nêu giả thuyết, cách kiểm chứng, phạm vi ảnh hưởng.
 6. Lập kế hoạch thành các bước nhỏ, mỗi bước kiểm chứng được.
 
 ## OUTPUT (đúng khuôn này)
@@ -35,6 +41,8 @@ Yêu cầu hoặc bug người dùng đưa ra, kèm mô tả BA / link Figma / f
 ## Loại: FEATURE | BUGFIX
 ## Tóm tắt yêu cầu (1-3 câu)
 ## Phạm vi ảnh hưởng: các screen/file/component/state/API (dẫn file:dòng)
+## Các screen đã quét theo vòng (chỉ BUGFIX): vòng 0/1/2..., mỗi screen ghi kết quả (bình thường / nghi ngờ / là nguyên nhân)
+## Mục sơ đồ cần cập nhật: dòng nào trong docs/screen-map.md sai hoặc lỗi thời (nếu có)
 ## Điểm chưa chắc chắn / câu hỏi cho người dùng
 ## Kế hoạch: danh sách bước đánh số, mỗi bước gồm:
    - Việc cần làm

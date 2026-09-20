@@ -60,5 +60,6 @@ Tối đa **3 vòng sửa**. Quá 3 vòng mà chưa qua: dừng, báo người d
 
 ## Ghi chú
 - Cả FEATURE lẫn BUGFIX đều đi qua Planner, Planner tự phân loại.
+- BUGFIX: Planner quét **dần theo vòng** (screen lỗi → screen kề và phần dùng chung → mở rộng), không quét lại cả dự án. Khi trình kế hoạch, kèm danh sách screen đã quét ở từng vòng và các mục sơ đồ cần cập nhật. Nếu chưa có `docs/screen-map.md` hoặc `docs/project-structure.md`, gợi ý người dùng chạy `/project-scan` và `/screen-scan` trước.
 - Với task rất nhỏ, vẫn dừng duyệt kế hoạch nhưng Planner có thể viết kế hoạch rút gọn.
 - Nếu bất kỳ vai nào báo điều mâu thuẫn hoặc thiếu thông tin, dừng và hỏi người dùng, không tự quyết.

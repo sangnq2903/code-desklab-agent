@@ -17,6 +17,7 @@ Mục tiêu: sau lần quét này, tìm bất kỳ màn hình nào trong dự á
 - Không tự build hay cài app khi chưa hỏi. Nếu app chưa chạy, hỏi người dùng có muốn tôi chạy build (ví dụ `npx react-native run-ios`) không.
 
 ## Giai đoạn A: Quét tĩnh, lập danh sách screen
+0. Đọc `docs/project-structure.md`. Chưa có thì chạy `/project-scan` trước (hoặc làm các bước tương đương) để nắm kiến trúc, chỗ đặt navigation, store, API.
 1. Đọc cấu trúc dự án, xác định screen từ cấu hình điều hướng (React Navigation stack/tab/drawer; Expo Router thì từ thư mục `app/`).
 2. Modal, bottom sheet, popup cũng tính là một screen, kể cả không đăng ký route (grep `Modal`, `BottomSheet`, `visible`, `showModal`, `Alert.alert`).
 3. Với mỗi screen ghi đủ: file chính, component con, state/store/hook, API/service, mở từ đâu, đi tới đâu.

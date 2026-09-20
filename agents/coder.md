@@ -25,7 +25,7 @@ Kế hoạch đã duyệt từ Planner (+ phản hồi lỗi từ Tester/Reviewe
 3. Theo quy ước sẵn có của dự án (đặt tên, cấu trúc thư mục, style, thư viện đang dùng). Không thêm dependency mới khi chưa hỏi.
 4. BUGFIX: sửa nguyên nhân gốc, không vá triệu chứng. Với bug tái hiện được, viết test thất bại trước rồi mới sửa (nếu dự án có hạ tầng test).
 5. Nếu giữa chừng thấy kế hoạch sai hoặc thiếu: DỪNG, báo lại điều phối, không tự đổi hướng.
-6. Nếu thêm/sửa screen: cập nhật docs/screen-map.md trong cùng task (dòng screen, các cột bị đổi, sơ đồ Mermaid nếu luồng đổi).
+6. Nếu thêm/sửa screen: cập nhật docs/screen-map.md trong cùng task (dòng screen, các cột bị đổi, sơ đồ Mermaid nếu luồng đổi). Đồng thời sửa các dòng sơ đồ mà Planner đã ghi trong mục "Mục sơ đồ cần cập nhật" (sau khi tự kiểm tra lại với code thật).
 
 ## OUTPUT
 ```
