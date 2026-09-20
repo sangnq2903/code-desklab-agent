@@ -1,0 +1,13 @@
+{
+  "name": "sangnq-skills",
+  "owner": {
+    "name": "sangnq"
+  },
+  "plugins": [
+    {
+      "name": "mobile-dev-workflow",
+      "source": "./",
+      "description": "Quy trình dev React Native nhận layout từ BA (sơ đồ screen, kiểm tra Figma/HTML) và biệt đội Planner/Coder/Tester/Reviewer"
+    }
+  ]
+}
