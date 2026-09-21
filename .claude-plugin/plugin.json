@@ -1,7 +1,7 @@
 {
   "name": "mobile-dev-workflow",
   "description": "Quy trình dev React Native nhận layout từ BA (sơ đồ screen, kiểm tra Figma/HTML) và biệt đội Planner/Coder/Tester/Reviewer",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": {
     "name": "sangnq"
   }
