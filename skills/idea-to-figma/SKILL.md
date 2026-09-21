@@ -20,6 +20,7 @@ Sau đó đưa bản đề xuất ngắn và chờ OK:
 
 ## Bước 2 — Vẽ
 - Mỗi màn 1 frame 390x844, xếp ngang cách 100px, đặt tên theo danh sách đã duyệt. Đầu tiên tạo 1 frame nháp để thử tokens; ổn thì mới nhân ra các màn.
+- **Không để các màn hình đè lên nhau.** Trước khi vẽ, đọc các frame top-level đang có trên page (`get_document_info`/`get_node_info`) rồi đặt màn mới ở x = mép phải frame ngoài cùng + 100, cùng y; nếu page trống thì màn i đặt ở x = i × (390 + 100). Không đặt tọa độ trùng vùng của frame khác. Sau khi vẽ xong mỗi màn và trước khi kết thúc, kiểm tra lại vị trí/kích thước mọi frame: không cặp nào giao nhau, khoảng cách ≥ 100px; nếu đè thì dời frame vừa vẽ (không dời/xoá frame cũ của người dùng).
 - Dùng auto-layout dọc/ngang, padding 16–24, gap theo tokens; safe area: chừa 47px trên (status bar), 34px dưới (home indicator). Tab bar/nav bar nhất quán giữa các màn.
 - Chất lượng: một hành động chính mỗi màn, tương phản chữ/nền ≥ 4.5:1, vùng chạm ≥ 44px, chữ không dưới 12px, không dùng emoji làm icon, nội dung mẫu thật (tên, số, giá) thay vì "Lorem ipsum".
 - **Tên layer bắt buộc có nghĩa** cho mọi phần tử tương tác: `btn-login`, `tab-profile`, `card-product-1`… (duy nhất trong frame) — dùng để nối flow.
