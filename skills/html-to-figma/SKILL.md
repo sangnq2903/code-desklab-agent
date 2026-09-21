@@ -23,6 +23,7 @@ Hướng dẫn ngắn: Figma desktop → Plugins → Development → Import plug
 Mở 1 file Figma, chạy plugin **Talk to Figma**, gửi channel ID. Chờ → `join_channel` → `get_document_info` xác nhận.
 
 ## Bước 2 — Phân tích HTML, [CẦN TÔI] duyệt
+**Trước tiên xác định thiết bị (hiện chỉ hỗ trợ mobile).** Suy ra từ HTML/CSS: `<meta viewport>`, `max-width`/width của container gốc, media query, layout (sidebar, nhiều cột, navbar ngang → web/desktop; bottom tab bar, một cột ~360–430px → mobile) và mô tả của người dùng. Mobile, hoặc không có dấu hiệu nào ngược lại → làm tiếp và ghi rõ "Thiết bị: mobile 390x844" khi liệt kê. Web/desktop/tablet → chưa hỗ trợ: không vẽ, báo "Hiện skill chỉ làm cho mobile" và nói dấu hiệu đã thấy. HTML responsive có cả hai → chỉ lấy nhánh mobile và ghi chú phần bị bỏ. Không tự đổi kích thước frame khác 390x844.
 Đọc toàn bộ HTML/CSS/JS. Nếu không thấy file HTML, hỏi đường dẫn. Liệt kê: số màn hình (kể cả màn ẩn/hiện bằng JS: `.screen`, `[hidden]`, `display:none`, section, tab, modal), tên từng màn, các nút chuyển màn (onclick/href/addEventListener/router). Chờ người dùng OK.
 
 ## Bước 3 — Vẽ
