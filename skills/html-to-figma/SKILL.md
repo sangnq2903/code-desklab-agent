@@ -29,6 +29,7 @@ Mở 1 file Figma, chạy plugin **Talk to Figma**, gửi channel ID. Chờ → 
 - Mỗi màn 1 frame 390x844, xếp ngang cách nhau 100px, tên frame = id/section HTML (ví dụ `screen-home`).
 - flex/grid → auto-layout; giữ đúng màu, font-size, font-weight, padding, gap, radius theo CSS. Font thiếu → Inter và ghi chú lại.
 - **Tên layer = id/class HTML** (btn-login, tab-profile…) — bắt buộc, vì flow nối theo tên. Tên layer trong 1 frame phải duy nhất cho các phần tử có link.
+- **Icon: không bao giờ để trống.** Icon trong HTML (inline `<svg>`, icon font, emoji, `<img>` không tải được) phải có mặt trong Figma: inline SVG → dựng lại vector đúng path nếu tool hỗ trợ; icon font/ảnh thiếu → tự vẽ bản tương đương từ shape/path (24x24, stroke 2px, nhất quán), đặt tên `icon-<tên>`. Không để ô rỗng hay khối màu trơn; ghi các icon xấp xỉ vào danh sách ở Bước 5.
 - Vẽ từng màn một; xong mỗi màn gọi `get_node_info` kiểm tra rồi mới sang màn tiếp.
 - Lỗi socket/timeout → thử lại (tối đa 3 lần). Lỗi "Must join a channel" → báo người dùng, không tự đoán channel.
 
