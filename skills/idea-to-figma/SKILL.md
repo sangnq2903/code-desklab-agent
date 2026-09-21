@@ -10,10 +10,10 @@ Người dùng mô tả ý tưởng; bạn tự quyết định layout/màu/ch�
 ## Bước 0 — Hạ tầng và kết nối
 Làm đúng như skill `html-to-figma` (Bước 0 + Bước 1): kiểm tra Bun, `~/talk-to-figma`, MCP `TalkToFigma`, relay port 3055 (`~/talk-to-figma/start.sh`), import 2 plugin (Talk to Figma + Flow Wirer ở `flow-wirer/` của repo sangnq-skills), **[CẦN TÔI]** gửi channel ID → `join_channel` → `get_document_info`. Chỉ bổ sung phần thiếu. Tool `mcp__TalkToFigma__*` chưa có → bảo người dùng mở lại phiên.
 
-## Bước 0.5 — Xác định thiết bị (hiện chỉ hỗ trợ mobile)
-Đọc mô tả xem người dùng muốn thiết kế cho thiết bị nào (mobile/app điện thoại, web/desktop, tablet, smartwatch…):
-- **Mobile**, hoặc không nói rõ thiết bị (app, ứng dụng, màn hình…) → làm tiếp với mobile, và nói rõ trong brief "Thiết bị: mobile 390x844".
-- **Web/desktop/tablet/thiết bị khác** (kể cả khi mô tả có cả mobile lẫn web) → chưa hỗ trợ. Không vẽ gì, không kết nối Figma. Báo: "Hiện skill chỉ làm cho mobile", hỏi người dùng có muốn làm bản mobile của ý tưởng này không.
+## Bước 0.5 — [CẦN TÔI] Hỏi thiết bị (hiện chỉ hỗ trợ mobile)
+**Luôn hỏi người dùng trước khi làm bất cứ việc gì khác**, kể cả khi mô tả có vẻ đã nói rõ: "Yêu cầu này thiết kế cho thiết bị nào?". Dùng AskUserQuestion, các lựa chọn: Mobile (đề xuất, ghi rõ "hiện chỉ hỗ trợ mobile"), Web/desktop, Tablet, Khác. Không tự suy ra thay người dùng.
+- **Mobile** → làm tiếp, ghi "Thiết bị: mobile 390x844" trong brief.
+- **Web/desktop/tablet/khác** → chưa hỗ trợ. Không vẽ gì, không kết nối Figma. Báo "Hiện skill chỉ làm cho mobile" và hỏi có muốn làm bản mobile của ý tưởng này không.
 Không tự đổi kích thước frame khác 390x844.
 
 ## Bước 1 — Chốt brief, [CẦN TÔI] duyệt
